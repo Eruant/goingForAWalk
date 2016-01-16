@@ -1,11 +1,11 @@
 const loop = require('./loop')
 const state = require('./state')
-const mob = require('./mob')
+const mobs = require('./mobs')
 
 console.log('--- App start ---', new Date(), '---')
 
 const init = () => {
-  var i, len, mobs
+  var i, len, allMobs
 
   window.removeEventListener('DOMContentLoaded', init)
 
@@ -20,12 +20,11 @@ const init = () => {
 
   i = 0
   len = 10
-  mobs = []
+  allMobs = []
   for (; i < len; i++) {
-    mobs[i] = mob.create(i, i, i + 10)
+    allMobs[i] = mobs.create(i, i, i + 10)
   }
-  state.set('mobs', mobs)
-  state.track('mobs')
+  state.set('mobs', allMobs)
 
   loop.start(state)
 }

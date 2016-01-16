@@ -1,11 +1,5 @@
-const state = require('./state')
-const mob = require('./mob')
+const mobs = require('./mobs')
 
 module.exports = (timePassed) => {
-  const items = state.get('track')
-  items.forEach(item => {
-    switch (item) {
-      case 'mobs': mob.update(timePassed); break
-    }
-  })
+  mobs.update(timePassed)
 }

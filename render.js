@@ -1,5 +1,5 @@
 const state = require('./state')
-const mob = require('./mob')
+const mobs = require('./mobs')
 
 module.exports = () => {
   const ctx = state.get('ctx')
@@ -8,12 +8,5 @@ module.exports = () => {
 
   ctx.fillRect(0, 0, width, height)
 
-  const items = state.get('track')
-  items.forEach(item => {
-    switch (item) {
-      case 'mobs':
-        mob.render()
-        break
-    }
-  })
+  mobs.render()
 }

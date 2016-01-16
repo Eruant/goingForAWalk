@@ -8,8 +8,7 @@ var state = {
   delta: 0,
   timeSinceLastUpdate: 0,
   frameTime: (1000 / 60),
-  mobs: [],
-  track: []
+  mobs: []
 }
 
 module.exports = {
@@ -26,10 +25,5 @@ module.exports = {
   },
   set (key, value) {
     state[key] = value
-  },
-  track (key) {
-    if (state.track.indexOf(key) === -1) {
-      state.track.push(key)
-    }
   }
 }
